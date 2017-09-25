@@ -1,0 +1,6 @@
+{
+	"data":[
+		{"coord":{"lon":76.26,"lat":9.94},"weather":[{"id":721,"main":"Haze","description":"haze","icon":"50n"}],"base":"stations","main":{"temp":300.15,"pressure":1009,"humidity":83,"temp_min":300.15,"temp_max":300.15},"visibility":4500,"wind":{"speed":1.31,"deg":106.008},"clouds":{"all":40},"dt":1506360600,"sys":{"type":1,"id":7827,"message":0.007,"country":"IN","sunrise":1506300234,"sunset":1506343724},"id":1273874,"name":"Cochin","cod":200}
+
+	]
+}
