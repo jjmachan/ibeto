@@ -1,0 +1,12 @@
+.align {
+	display: inline-block;
+	background: black;
+	color: white;
+	position: absolute;
+	bottom: 20px;
+	right: 10px;
+}
+
+.col {
+	background: green;
+}
