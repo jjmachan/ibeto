@@ -1,5 +1,39 @@
 {
-  "weatherData": {
-    
-  }
+  "weatherData": [
+    {
+      "all": "90",
+      "temp_min": "301.15",
+      "message": "0.0124",
+      "speed": "3.86",
+      "id": "15:25 2017-09-28",
+      "sunrise": "1506559423",
+      "weather-id": "701",
+      "temp_max": "301.15",
+      "lon": "76.26",
+      "main": "Mist",
+      "type": "1",
+      "description": "mist",
+      "pressure": "1007",
+      "base": "stations",
+      "lat": "9.94",
+      "icon": "50d",
+      "name": "Cochin",
+      "temp": "301.15",
+      "country": "IN",
+      "humidity": "83",
+      "sunset": "1506602827",
+      "deg": "238.001"
+    }
+  ],
+  "today": [
+    {
+      "pressure": "1007",
+      "main": "Mist",
+      "temp": "301.15",
+      "humidity": "83",
+      "id": 1
+    }
+  ],
+  "test":[
+  ]
 }

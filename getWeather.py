@@ -1,5 +1,6 @@
 import requests
 import datetime
+import time
 
 now = datetime.datetime.now()
 URL='http://api.openweathermap.org/data/2.5/weather?'
@@ -11,7 +12,7 @@ payload = { "appid": appid, "id": cityId[0]}
 r = requests.get(URL,params = payload)
 
 dataDict = {}
-dataDict['time'] = now.strftime("%H:%M %Y-%m-%d")
+time= now.strftime("%H:%M %Y-%m-%d")
 
 for i in r.json():
 	if isinstance(r.json()[i],unicode):
@@ -23,8 +24,16 @@ for i in r.json():
 		for j in r.json()[i][0]:
 			dataDict[j] = r.json()[i][0][j]
 
-print(dataDict,len(dataDict))
+temp = dataDict['id']
+dataDict["id"] = time
+dataDict['weather-id'] = temp
+mainData = {}
+for i in ['temp','pressure','humidity','main']:
+	mainData[i] = dataDict[i]
+print(mainData)
 
-serverURL = 'http://localhost:3000/posts'
+weatherDataURL = 'http://localhost:3000/weatherData'
+todayURL = 'http://localhost:3000/today'
 
-r = requests.post(serverURL,data= dataDict)
+weatherData = requests.post(weatherDataURL,data= dataDict)
+today = requests.post(todayURL,data=mainData)

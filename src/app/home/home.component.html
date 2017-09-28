@@ -17,13 +17,13 @@
 		<div class="card" *ngIf="results">
 		<div> 
 		<span class="info">
-			<span> {{ results[0].name }} </span>
-			<span> {{ results[0].sys.country }} </span>
+			<span> {{ results.name }} </span>
+			<span> {{ results.sys.country }} </span>
 		</span>
 			<span class="data">
-				<span> <b>Temperature: </b>{{ results[0].main.temp-273.15 }} </span>
-				<span> <b>Pressure: </b>{{ results[0].main.pressure }}hPa </span>
-				<span> <b>Humidity: </b>{{ results[0].main.humidity }}% </span>
+				<span> <b>Temperature: </b>{{ results.main.temp-273.15 }} </span>
+				<span> <b>Pressure: </b>{{ results.main.pressure }}hPa </span>
+				<span> <b>Humidity: </b>{{ results.main.humidity }}% </span>
 			</span>
 		</div>
   </div>
