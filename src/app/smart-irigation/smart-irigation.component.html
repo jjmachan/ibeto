@@ -1,3 +1,19 @@
-<p>
-  smart-irigation works!
-</p>
+<div class="container">
+
+	<div class="row">
+		<div class="col m6">
+			<div class="card">
+				 <canvas id="homeChart" baseChart height="327px" width="500px" 
+		            [datasets]="lineData"
+		            [labels]="lineLabels"
+		            [options]="lineOptions"
+		            [legend]="false"
+		            [chartType]="lineType"
+		            (chartHover)="chartHovered($event)"
+		            (chartClick)="chartClicked($event)">
+		     </canvas>
+			</div>
+	</div>
+
+</div>
+{{ lineData[0] }}
