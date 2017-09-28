@@ -1,3 +1,61 @@
-<p>
-  home works!
-</p>
+<div class="container">
+	
+	<div class="row">
+	<div class="col m3">
+	  <div class="card">
+	    <div class="card-image">
+	      <img src="../assets/img/sunny.jpg">
+	      <span class="card-title">Sunny</span>
+	    </div>
+	    <div class="card-content">
+	    <p> Looks like its gonna be sunny for a long time man. Better start working on our plants </p>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="col m4">
+		<div class="card" *ngIf="results">
+		<div> 
+		<span class="info">
+			<span> {{ results[0].name }} </span>
+			<span> {{ results[0].sys.country }} </span>
+		</span>
+			<span class="data">
+				<span> <b>Temperature: </b>{{ results[0].main.temp-273.15 }} </span>
+				<span> <b>Pressure: </b>{{ results[0].main.pressure }}hPa </span>
+				<span> <b>Humidity: </b>{{ results[0].main.humidity }}% </span>
+			</span>
+		</div>
+  </div>
+  </div>     
+	<div class="col m5">
+		<div class="card" id="piChart">
+			<div class="card-title text"> hai </div>
+			    <canvas id="homeChart" baseChart height="320px" width="320px" 
+		            [datasets]="doughnutChartData"
+		            [labels]="doughnutChartLabels"
+		            [options]="barChartOptions"
+		            [colors]="doughnutChartColor"
+		            [legend]=false
+		            [chartType]="doughnutChartType"
+		            (chartHover)="chartHovered($event)"
+		            (chartClick)="chartClicked($event)">
+		     </canvas>
+
+		</div>
+	</div>
+  <div class="row">
+	<div class="col m12">
+		<div class="card">
+		    <canvas id="homeChart" baseChart height="327px" width="1000px" 
+		            [datasets]="barChartData"
+		            [labels]="barChartLabels"
+		            [options]="barChartOptions"
+		            [legend]="barChartLegend"
+		            [chartType]="barChartType"
+		            (chartHover)="chartHovered($event)"
+		            (chartClick)="chartClicked($event)">
+		     </canvas>
+		</div>
+	</div>
+</div>
