@@ -33,7 +33,7 @@ for i in ['temp','pressure','humidity','main']:
 print(mainData)
 
 weatherDataURL = 'http://localhost:3000/weatherData'
-todayURL = 'http://localhost:3000/today'
+todayURL = 'https://my-json-server.typicode.com/jjmachan/ibeto/today'
 
-weatherData = requests.post(weatherDataURL,data= dataDict)
+#weatherData = requests.post(weatherDataURL,data= dataDict)
 today = requests.post(todayURL,data=mainData)

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ChartsModule } from 'ng2-charts';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import Chart from 'chart.js';
 
 
@@ -10,32 +9,50 @@ import Chart from 'chart.js';
 })
 export class SmartIrigationComponent implements OnInit {
 	 // precipitation watering graph
-
-   barChartOptions:any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-  barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  barChartType:string = 'line';
-  barChartLegend:boolean = true;
-  barChartData:any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
-  ];
-  public barColors: any[] = [ {backgroundColor:['rgb(53,59,242)','rgb(96,184,246)']} ]
- 
-  chartClicked(e:any):void {
-    console.log(e);
-  }
- 
-  chartHovered(e:any):void {
-    console.log(e);
-  }
- 
+  @ViewChild('waterInfo') waterInfo:ElementRef;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        let ctx = this.waterInfo.nativeElement.getContext('2d');
 
+        var data = {
+            labels: ['29.9.17', '30.9.17', '1.10.17', '2.10.17', '3.10.17', '4.10.17', '5.10.17'],
+            datasets: [
+                {
+                    "label": ['Precipitation'],
+                    "data": [18, 38, 82, 29, 18, 39, 26],   // Example data
+                    "backgroundColor": "#1fc8f8"
+                },
+                                {
+                    "label": ['Water Usage'],
+                    "data": [70, 50, 25, 67, 68, 66, 51],
+                    "backgroundColor": '#0066ff'
+                  
+                },
+                {
+                    "label": ['Temperature'],
+                    "data": [18, 38, 82, 29, 18, 39, 26],   // Example data
+                    "borderColor": '#000',
+                    'type': 'line',
+                    'fill': false
+                }]
+
+        };
+
+        var chart = new Chart(
+            ctx,
+            {
+                "type": 'bar',
+                "data": data,
+                "options": {
+                    "cutoutPercentage": 50,
+                    "animation": {
+                        "animateScale": true,
+                        "animateRotate": false
+                    }
+                }
+            }
+        );
+    }
 }

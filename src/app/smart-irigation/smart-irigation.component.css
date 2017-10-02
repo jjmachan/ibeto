@@ -2,3 +2,27 @@
 	width: 90% !important;
 	margin-top: 40px;
 }
+
+.card img{
+	max-height: 100%;
+	width: auto;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.card {
+	height: 450px;
+}
+
+.card-title {
+	padding: 10px 20px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 6%;
+    padding: 0;
+}

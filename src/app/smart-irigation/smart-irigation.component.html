@@ -1,17 +1,18 @@
 <div class="container">
 
 	<div class="row">
-		<div class="col m6">
+		<div class="col m2">
 			<div class="card">
-		    <canvas id="homeChart" baseChart height="327px" width="1000px" 
-		            [datasets]="barChartData"
-		            [labels]="barChartLabels"
-		            [options]="barChartOptions"
-		            [legend]="barChartLegend"
-		            [colors]="barColors"
-		            [chartType]="barChartType"
-		            (chartHover)="chartHovered($event)"
-		            (chartClick)="chartClicked($event)">
+				<div class="card-title"> Soil Water Level </div>
+				<hr>
+				<img class="responsive-img" src="../assets/img/80.png">
+			</div>
+		</div>
+		<div class="col m10">
+			<div class="card">
+				<div class="card-title"> Water Stats </div>
+				<hr>
+		    <canvas #waterInfo height="327px" width="1000px"> 
 		     </canvas>
 			</div>
 	</div>

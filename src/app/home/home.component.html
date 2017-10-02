@@ -1,10 +1,10 @@
 <div class="container">
 	
-	<div class="row">
+	<div class="row" id="infoCard">
 	<div class="col m3">
 	  <div class="card">
 	    <div class="card-image">
-	      <img src="../assets/img/sunny.jpg">
+	      <img src="../assets/img/sunny.png">
 	      <span class="card-title">Sunny</span>
 	    </div>
 	    <div class="card-content">
@@ -14,23 +14,25 @@
 	</div>
 
 	<div class="col m4">
-		<div class="card" *ngIf="results">
-		<div> 
-		<span class="info">
-			<span> {{ results.name }} </span>
-			<span> {{ results.sys.country }} </span>
+		<div class="card row" *ngIf="results">
+		<div class="card-title title"> Weather Info </div>
+		<hr>
+		<span class="info col m6">
+			<p> {{ results.name }} </p>
+			<p> {{ results.sys.country }} </p>
 		</span>
-			<span class="data">
-				<span> <b>Temperature: </b>{{ results.main.temp-273.15 }} </span>
-				<span> <b>Pressure: </b>{{ results.main.pressure }}hPa </span>
-				<span> <b>Humidity: </b>{{ results.main.humidity }}% </span>
+			<span class="data col m6">
+				<p> <b>Temperature: </b> <br> {{ results.main.temp-273.15 }} C</p>
+				<p> <b>Pressure: </b> <br> {{ results.main.pressure }}hPa </p>
+				<p> <b>Humidity: </b> <br> {{ results.main.humidity }}% </p>
 			</span>
 		</div>
+		<br style="clear:both;"/>
   </div>
-  </div>     
 	<div class="col m5">
 		<div class="card" id="piChart">
-			<div class="card-title text"> hai </div>
+			<div class="card-title title"> Manure Level </div>
+			 <hr>
 			    <canvas id="homeChart" baseChart height="320px" width="320px" 
 		            [datasets]="doughnutChartData"
 		            [labels]="doughnutChartLabels"
@@ -43,6 +45,7 @@
 		     </canvas>
 
 		</div>
+	</div>
 	</div>
   <div class="row">
 	<div class="col m12">

@@ -1,6 +1,10 @@
 <nav>
-	<a routerLink="/home" routerLinkActive="active"> Home </a>
-	<a routerLink="/SmartIrigation" routerLinkActive="active">SmartIrigation </a>
-	<a routerLink="/DiseaseDetection" routerLinkActive='active'> Disease Detection </a>
+  <div class="nav-wrapper">
+  	<a routerLink='/home' class="right"><img class="logoImg logo" src="../assets/img/logo.png"></a>
+  	<a routerLink="/home" routerLinkActive="active"><img src="../assets/img/home.png" class="logoImg"> </a>
+	<a routerLink="/SmartIrigation" routerLinkActive="active"><img src="../assets/img/droplet.png" class="logoImg"> </a>
+	<a routerLink="/DiseaseDetection" routerLinkActive='active'><img src="../assets/img/leaf.png" class="logoImg"></a>
+</div>
 </nav>
+
 <router-outlet></router-outlet>

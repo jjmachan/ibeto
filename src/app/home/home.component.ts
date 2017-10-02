@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: false
   };
-  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels:string[] = ['29.9.17', '30.9.17', '1.10.17', '2.10.17', '3.10.17', '4.10.17', '5.10.17'];
   public doughnutChartLabels: string[] = ['days left','completed']
   public barChartType:string = 'line';
   public doughnutChartType:string = 'doughnut';

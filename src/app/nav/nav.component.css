@@ -1,3 +1,20 @@
 .active {
-	color: black;
+	color: grey;
+}
+
+nav {
+	background-color: #000;
+}
+
+.logoImg {
+	width: 50px;
+	height: 50px;
+	margin: 8px;
+
+}
+
+.logo {
+	width: 190px;
+	height: 50px;
+	padding: 0px;
 }
